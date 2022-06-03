@@ -34,9 +34,10 @@ class User extends Authenticatable
     ];
     public function getAllUsers()
     {
-        return User::query()->select('*')
-                ->join('posts as p', 'f.id', '=', 'fu.id_ficha')
-                ->get();
+        DB::connection('mysql')->table('users as u')
+               ->leftJoin('personal_permissions as p', 'u.id', '=', 'p.user_id')
+               ->select('u.*','p.permissao')
+               ->get();
     }
     public function remove($id){
         User::destroy($id);
