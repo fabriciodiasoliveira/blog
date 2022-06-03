@@ -27,7 +27,7 @@ class Post extends Model
     {
         return $this->find($id);
     }
-    public function updateSemModel($id, Array $options)
+    public function updateWingoutModel($id, Array $options)
     {
         Permission::query()->where('id', '=', $id)->update($options);
     }

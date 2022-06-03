@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -34,9 +34,9 @@ class User extends Authenticatable
     ];
     public function getAllUsers()
     {
-        DB::connection('mysql')->table('users as u')
+        return DB::connection('mysql')->table('users as u')
                ->leftJoin('personal_permissions as p', 'u.id', '=', 'p.user_id')
-               ->select('u.*','p.permissao')
+               ->select('u.*','p.permission')
                ->get();
     }
     public function remove($id){
@@ -46,7 +46,7 @@ class User extends Authenticatable
     {
         return $this->find($id);
     }
-    public function updateSemModel($id, Array $options)
+    public function updateWingoutModel($id, Array $options)
     {
         User::query()->where('id', '=', $id)->update($options);
     }
