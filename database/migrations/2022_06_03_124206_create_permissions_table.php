@@ -13,7 +13,7 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('personal_permissions', function (Blueprint $table) {
             $table->id();
             $table->string('permission');
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();

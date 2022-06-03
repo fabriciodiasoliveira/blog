@@ -32,6 +32,27 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function getAllUsers()
+    {
+        return User::query()->select('*')
+                ->join('posts as p', 'f.id', '=', 'fu.id_ficha')
+                ->get();
+    }
+    public function remove($id){
+        User::destroy($id);
+    }
+    public function getUser($id)
+    {
+        return $this->find($id);
+    }
+    public function updateSemModel($id, Array $options)
+    {
+        User::query()->where('id', '=', $id)->update($options);
+    }
+    public function store(array $options = [])
+    {
+        User::query()->insert($options);
+    }
 
     /**
      * The attributes that should be cast.

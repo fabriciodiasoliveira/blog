@@ -12,6 +12,7 @@ class PostFactory extends Factory
      *
      * @return array
      */
+    protected $model = Post::class;
     public function definition()
     {
         return [

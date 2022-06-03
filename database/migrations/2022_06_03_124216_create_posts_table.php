@@ -13,7 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('personal_posts', function (Blueprint $table) {
             $table->id();
             $table->text('head');
             $table->text('summary');
