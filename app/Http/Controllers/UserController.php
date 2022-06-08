@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Permission;
 
 class UserController extends Controller {
 
     private $model;
+    private $model_permission;
 
     function __construct() {
         $this->model = new User();
+        $this->model_permission = new Permission();
     }
 
     public function index() {
@@ -49,5 +52,14 @@ class UserController extends Controller {
     public function destroy($id) {
         $this->model->remove($id);
         return redirect()->route('users.index')->with('success', 'Usuário deletado');;
+    }
+    public function setAdmin(Request $request){
+        $id = $request->id;
+        $permission = $request->permission;
+        if($permission == 'admin'){
+            $this->model_permission->setAdmin($id);
+        } else{
+            $this->model_permission->setNoAdmin($id);
+        }
     }
 }

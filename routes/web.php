@@ -23,7 +23,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::post('/user/setadmin/', [UserController::class, 'setAdmin'])->name('user.setadmin');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
 
 Route::group(['middleware' => 'App\Http\Middleware\IsAdmin'], function() {

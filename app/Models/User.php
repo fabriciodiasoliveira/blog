@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Permission;
 
 class User extends Authenticatable
 {
@@ -50,9 +51,13 @@ class User extends Authenticatable
     {
         User::query()->where('id', '=', $id)->update($options);
     }
+    
     public function store(array $options = [])
     {
-        User::query()->insert($options);
+        $model = new Permission();
+        $id = User::query()->insertGetId($options);
+        dd($id);
+        $model->store(['user_id' => $id,]);        
     }
 
     /**

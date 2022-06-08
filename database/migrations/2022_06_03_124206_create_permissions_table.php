@@ -15,7 +15,7 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('personal_permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('permission')->default('admin');
+            $table->string('permission')->default('noadmin');
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
             $table->timestamps();
         });
