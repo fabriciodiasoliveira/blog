@@ -5,6 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div id="teste">Oi, bom dia</div>
+                
+                
+            
+            <script>
+                 $(function() {
+                  teste = $("#teste").html();
+                  alert(teste);
+                });
+            </script>
+
             <div class="card">
                 <div class="card-header">Blog do Fabrício</div>
 
