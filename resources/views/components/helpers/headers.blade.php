@@ -26,3 +26,10 @@
     <!-- Personalizações -->
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <script src="{{ asset('js/global.js') }}" defer></script>
+
+    <!-- Animate.css -->
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="{{ asset('js/jquery.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.mask.js') }}" defer></script>
