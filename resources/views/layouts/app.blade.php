@@ -7,6 +7,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                @component('components.helpers.alerts')@endcomponent
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -60,9 +61,9 @@
         </nav>
 
         <main class="py-4">
-            @component('components.helpers.alerts')@endcomponent
             @yield('content')
         </main>
+        <script src="{{ asset('js/global.end.js') }}" ></script>
     </div>
 </body>
 </html>
