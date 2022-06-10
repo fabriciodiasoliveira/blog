@@ -27,6 +27,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::group(['middleware' => 'App\Http\Middleware\IsAdmin'], function() {
-    Route::get('/users', [UserController::class, 'index'])->name('users');
-    Route::post('/user/setadmin', [UserController::class, 'setAdmin'])->name('user.setadmin');
+    Route::resource('user', UserController::class);
 });

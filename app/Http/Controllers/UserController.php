@@ -27,7 +27,7 @@ class UserController extends Controller {
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
         $this->model->store($data);
-        return redirect()->route('users.index')->with('success', 'Um usuário inserido.');
+        return redirect()->route('user.index')->with('success', 'Um usuário inserido.');
     }
 
     public function show($id) {
@@ -42,23 +42,21 @@ class UserController extends Controller {
 
     public function update(Request $request, $id) {
         $data = $request->all();
-        $data['password'] = bcrypt($data['password']);
-        $this->model->updateWingoutModel($id, $this->setData($data));
-        return redirect()->route('users.index')->with('success', 'Usuário alterado');
+        if(array_key_exists("tipo", $data)){
+            $this->model->setAdmin($id, $data);
+        }else{
+            $data['password'] = bcrypt($data['password']);
+            $this->model->updateWingoutModel($id, $data);
+        }
+        return redirect()->route('user.index')->with('success', 'Usuário alterado');
     }
 
     public function destroy($id) {
         $this->model->remove($id);
-        return redirect()->route('users.index')->with('success', 'Usuário deletado');;
+        return redirect()->route('user.index')->with('success', 'Usuário deletado');
     }
     public function setAdmin(Request $request){
-        $id = $request->id;
-        $permission = $request->tipo;
-        if($permission == 'admin'){
-            $this->model->setAdmin($id);
-        } else{
-            $this->model->setNoAdmin($id);
-        }
+        $this->model->updateWingoutModel($id, $this->setData($data));
         return request()->json(['200' => 'Funcionou']);
     }
 }

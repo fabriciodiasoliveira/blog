@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Permission;
+use App\Models\User;
 
 class User extends Authenticatable
 {
@@ -35,10 +35,7 @@ class User extends Authenticatable
     ];
     public function getAllUsers()
     {
-        return DB::connection('mysql')->table('users as u')
-               ->leftJoin('personal_permissions as p', 'u.id', '=', 'p.user_id')
-               ->select('u.*','p.permission')
-               ->get();
+        return User::query()->select('*')->get();
     }
     public function remove($id){
         User::destroy($id);
@@ -54,10 +51,12 @@ class User extends Authenticatable
     
     public function store(array $options = [])
     {
-        $model = new Permission();
-        $id = User::query()->insertGetId($options);
-        dd($id);
-        $model->store(['user_id' => $id,]);        
+        return User::query()->insertGetId($options);
+    }
+    public function setAdmin($id, Array $options){
+        unset($options['_method']);
+        unset($options['_token']);
+        User::query()->where('id', '=', $id)->update($options);
     }
 
     /**

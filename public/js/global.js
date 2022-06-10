@@ -4,7 +4,8 @@ function teste(select) {
   var data = new FormData(form);
   // const json = JSON.stringify(Object.fromEntries(data));  
   // console.log(json);
-  url = '/user/setadmin'
+  url = '/user/'+data.get('id');
+  console.log(data.get(id));
   fetch(url, {
         method: "POST",
         body: data
