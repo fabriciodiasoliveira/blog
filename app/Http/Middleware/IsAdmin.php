@@ -4,8 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\User;
-
+use Auth;
 class IsAdmin {
 
     /**
@@ -16,13 +15,11 @@ class IsAdmin {
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next) {
-        $model = new User();
-        $user = $model->getUser(Auth::user()->id);
-        if ($user->permission == 'admin') {
+        if (Auth::user() &&  Auth::user()->tipo == 'admin') {
             return $next($request);
         }
 
-        return redirect('home');
+        return redirect('/');
     }
 
 }
