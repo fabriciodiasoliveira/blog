@@ -2,17 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Blog do Fabrício</div>
-
-                <div class="card-body">
-                    <h1>Blog</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+    @component('components.posts.list', compact ('posts'))@endcomponent
     <div class="row">
         <div class='col-md-12'>
             

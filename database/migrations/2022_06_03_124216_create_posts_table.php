@@ -19,7 +19,8 @@ class CreatePostsTable extends Migration
             $table->text('summary');
             $table->longText('body');
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
-            $table->timestamps();
+            $table->datetime('created_at')->useCurrent();
+            $table->datetime('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

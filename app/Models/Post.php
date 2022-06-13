@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
@@ -18,9 +19,10 @@ class Post extends Model
     ];
     public function getAllPosts()
     {
-        return Post::query()->select('*')
-            ->orderBy('id','DESC')
-            ->get();
+        return DB::table('personal_posts as p')
+            ->join('users as u', 'u.id', '=', 'p.user_id')
+            ->select('u.name', 'p.*')
+            ->paginate(10);
     }
     public function remove($id){
         Post::destroy($id);

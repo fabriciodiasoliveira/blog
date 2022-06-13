@@ -16,6 +16,7 @@ class PostController extends Controller {
 
     public function index() {
         $posts = $this->model->getAllPosts();
+        dd($posts);
         return view('posts.index', compact('posts'));
     }
 
