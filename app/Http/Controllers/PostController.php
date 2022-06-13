@@ -2,84 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Permission;
 
-class PostController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class PostController extends Controller {
+
+    private $model;
+
+    function __construct() {
+        $this->model = new Post();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index() {
+        $posts = $this->model->getAllPosts();
+        return view('posts.index', compact('posts'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function create() {
+        return view('posts.create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-        //
+    public function store(Request $request) {
+        $data = $request->all();
+        $this->model->store($data);
+        return redirect()->route('post.index')->with('success', 'Uma Postagem inserida.');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        //
+    public function show($id) {
+        $post = $this->model->getPost($id);
+        return view('posts.show', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Post $post)
-    {
-        //
+    public function edit($id) {
+        $post = $this->model->getPost($id);
+        return view('posts.edit', compact('post'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
-        //
+    public function update(Request $request, $id) {
+        $data = $request->all();
+        $this->model->updateWingoutModel($id, $data);
+         return redirect()->route('post.index')->with('success', 'Postagem alterada');
     }
+
+    public function destroy($id) {
+        $this->model->remove($id);
+        return redirect()->route('post.index')->with('success', 'Postagem deletada');
 }

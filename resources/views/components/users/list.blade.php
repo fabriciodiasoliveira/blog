@@ -1,7 +1,8 @@
-@foreach ($users as $user)
+
 <div class="row">
     <div class="col-md-12">
         <table class="table table-striped" width="100%">
+            @foreach ($users as $user)
             <tr>
                 <td width="50%"> {{ $user->name }}</td>
                 <td width="30%">{{ $user->email }}</td>
@@ -14,11 +15,10 @@
                             <option value="admin" @if($user->tipo == 'admin') selected @endif>Administrador</option>
                         </select>
                         <input id="id" type="hidden" name="id" value="{{ $user->id }}">
-                        {{ route('user.update', $user->id) }}
                     </form>
                 </td>
             </tr>
+            @endforeach
         </table>
     </div>
 </div>
-@endforeach
