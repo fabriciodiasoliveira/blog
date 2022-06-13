@@ -48,4 +48,5 @@ class PostController extends Controller {
     public function destroy($id) {
         $this->model->remove($id);
         return redirect()->route('post.index')->with('success', 'Postagem deletada');
+    }
 }

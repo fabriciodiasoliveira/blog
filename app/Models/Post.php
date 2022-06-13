@@ -16,23 +16,25 @@ class Post extends Model
     protected $hidden = [
         'user_id',
     ];
-    public function getAllPermissions()
+    public function getAllPosts()
     {
-        return Permission::query()->select('*')->get();
+        return Post::query()->select('*')
+            ->orderBy('id','DESC')
+            ->get();
     }
     public function remove($id){
-        Permission::destroy($id);
+        Post::destroy($id);
     }
-    public function getPermission($id)
+    public function getPost($id)
     {
         return $this->find($id);
     }
     public function updateWingoutModel($id, Array $options)
     {
-        Permission::query()->where('id', '=', $id)->update($options);
+        Post::query()->where('id', '=', $id)->update($options);
     }
     public function store(array $options = [])
     {
-        Permission::query()->insert($options);
+        Post::query()->insert($options);
     }
 }
