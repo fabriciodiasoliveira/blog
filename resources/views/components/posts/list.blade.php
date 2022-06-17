@@ -13,7 +13,7 @@
 @foreach ($posts as $post)
     <div class="col-md-{{$col[$y][$x]}}">
         <div class="card">
-            <div class="card-header">{{ $post->head }}</div>
+            <div class="card-header"><a href="{{ route('post.show', $post->id) }}"><h2>{{ $post->head }}</h2></a></div>
 
             <div class="card-body">
                 {{ $post->summary }}
