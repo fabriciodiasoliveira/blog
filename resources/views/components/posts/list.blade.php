@@ -7,7 +7,7 @@
   array(4,4,4),
 );
  $x = 0;
- $y = 0;
+ $y = rand(0,3);
 @endphp
 <div class="row">
 @foreach ($posts as $post)
@@ -24,10 +24,7 @@
 @if($x == 3)
 </div>
 <div class="row">
-@php $x = 0; $y++; @endphp
-@endif
-@if($y == 4)
-@php $y = 0; @endphp
+@php $x = 0; $y = rand(0,3); @endphp
 @endif
 @endforeach
 </div>
