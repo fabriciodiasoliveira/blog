@@ -22,6 +22,7 @@ class Post extends Model
         return DB::table('personal_posts as p')
             ->join('users as u', 'u.id', '=', 'p.user_id')
             ->select('u.name', 'p.*')
+            ->orderBy('p.id', 'desc')
             ->paginate(20);
     }
     public function remove($id){

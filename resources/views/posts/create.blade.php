@@ -7,13 +7,9 @@
             <div class="card" style="width: 100%;">
                 <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                 <div class="card-body">
-                    <h5 class="card-title">Inserir produto</h5>
-                    <p class="card-text">Insira um novo produto.</p>
-                        @component('components.mercadoria.upload', compact('mercadoria'))@endcomponent
-                    <form class="form-horizontal" method="POST" action="{{ route('mercadoria.store') }}">
-                        {{ csrf_field() }}
-                        @component('components.mercadoria.mercadoria', compact('mercadoria', 'fornecedores'))@endcomponent
-                    </form>
+                    <h5 class="card-title">Nova postagem</h5>
+                    <p class="card-text">Insira uma nova postagem.</p>
+                        @component('components.posts.posts', compact('post'))@endcomponent
                 </div>
             </div>
         </div>
