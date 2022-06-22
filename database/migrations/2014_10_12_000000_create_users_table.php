@@ -21,8 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('tipo')->default('autor');
             $table->rememberToken();
-            $table->datetime('created_at')->useCurrent();
-            $table->datetime('updated_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamps();
         });
     }
 
