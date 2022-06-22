@@ -38,6 +38,7 @@ class Post extends Model
     }
     public function store(array $options = [])
     {
+        unset($options['_token']);
         Post::query()->insert($options);
     }
 }

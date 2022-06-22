@@ -20,7 +20,7 @@
         <label for="summary" class="col-md-4 control-label">Resumo</label>
 
         <div class="col-md-6">
-            <textarea class="form-text" name="summary"></textarea>
+            <textarea class="form-control" name="summary"></textarea>
 
             @if ($errors->has('summary'))
             <span class="help-block">
@@ -33,7 +33,7 @@
         <label for="body" class="col-md-4 control-label">Matéria</label>
 
         <div class="col-md-6">
-            <textarea class="form-text" name="body"></textarea>
+            <textarea class="form-control" name="body"></textarea>
 
             @if ($errors->has('body'))
             <span class="help-block">
@@ -74,7 +74,7 @@
         <label for="summary" class="col-md-4 control-label">Resumo</label>
 
         <div class="col-md-6">
-            <textarea class="form-text" name="summary">{{ $post->summary }}</textarea>
+            <textarea class="form-control" name="summary">{{ $post->summary }}</textarea>
 
             @if ($errors->has('summary'))
             <span class="help-block">
@@ -87,7 +87,7 @@
         <label for="body" class="col-md-4 control-label">Matéria</label>
 
         <div class="col-md-6">
-            <textarea class="form-text" name="body">{{ $post->body }}</textarea>
+            <textarea class="form-control" name="body">{{ $post->body }}</textarea>
 
             @if ($errors->has('body'))
             <span class="help-block">

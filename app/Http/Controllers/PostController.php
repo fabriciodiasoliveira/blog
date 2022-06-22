@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Permission;
+use Auth;
 
 class PostController extends Controller {
 
@@ -25,6 +26,7 @@ class PostController extends Controller {
 
     public function store(Request $request) {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         $this->model->store($data);
         return redirect()->route('post.index')->with('success', 'Uma Postagem inserida.');
     }
@@ -32,6 +34,10 @@ class PostController extends Controller {
     public function show($id) {
         $post = $this->model->getPost($id);
         return view('posts.show', compact('post'));
+    }
+    public function showUser($id) {
+        $post = $this->model->getPost($id);
+        return view('posts.post', compact('post'));
     }
 
     public function edit($id) {

@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nova postagem</h5>
                     <p class="card-text">Insira uma nova postagem.</p>
-                        @component('components.posts.posts', compact('post'))@endcomponent
+                        @component('components.posts.posts')@endcomponent
                 </div>
             </div>
         </div>

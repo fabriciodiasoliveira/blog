@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
-        <a class="btn btn-primary" href="{{ route("post.create") }}">Novo produto</a>
-    </div>
     <div class="col-md-12 d-flex justify-content-center">
         <div class="card" style="width: 50%;">
                 <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                 <div class="card-body">
                     <h5 class="card-title">Postagens</h5>
+                    <div class="col-md-12">
+                        <a class="btn btn-primary" href="{{ route("post.create") }}">Nova postagem</a>
+                    </div>
                     <p class="card-text">Minhas postagens</p>
                     @foreach ($posts as $post)
                         <div class="col-md-12">

@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/visit/post/{i}', [PostController::class, 'show'])->name('post.show.visit');
 
 Route::group(["middleware" => 'auth'], function () {
     Route::group(['middleware' => 'App\Http\Middleware\IsAdmin'], function() {
