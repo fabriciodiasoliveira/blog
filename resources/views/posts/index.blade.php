@@ -18,6 +18,7 @@
 
                                 <div class="card-body">
                                     {{ $post->summary }} - <h6><i>{{ $post->updated_at }}</i></h6>
+                                    <br><a href="{{ route('post.edit', $post->id) }}"> Alterar</a>
                                 </div>
                             </div>
                         </div>

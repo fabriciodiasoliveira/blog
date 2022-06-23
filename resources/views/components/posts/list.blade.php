@@ -16,7 +16,7 @@
             <div class="card-header"><a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2></a></div>
 
             <div class="card-body">
-                {{ $post->summary }} - <small><i> Atualizado em {{ date('d/m/Y - H:i:s', strtotime($post->updated_at)) }}</i></small>
+                {{ $post->summary }} - <small><i> Atualizado em {{ date('d/m/Y - H:i:s', strtotime($post->created_at)) }}</i></small>
                 @php $x++; @endphp
             </div>
         </div>

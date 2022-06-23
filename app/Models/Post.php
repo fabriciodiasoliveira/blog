@@ -34,6 +34,8 @@ class Post extends Model
     }
     public function updateWingoutModel($id, Array $options)
     {
+        unset($options['_token']);
+        unset($options['_method']);
         Post::query()->where('id', '=', $id)->update($options);
     }
     public function store(array $options = [])
