@@ -42,6 +42,9 @@
             @endif
         </div>
     </div>
+    <script>
+      new FroalaEditor('textarea');
+    </script>
 
 
     <div class="form-group">
@@ -56,7 +59,7 @@
 <form id="form" class="form-horizontal" method="POST" action="{{ route('post.update', $post->id) }}">
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="PUT" />
-    <<div class="form-group{{ $errors->has('head') ? ' has-error' : '' }}">
+    <div class="form-group{{ $errors->has('head') ? ' has-error' : '' }}">
         <label for="name" class="col-md-4 control-label">Título</label>
 
         <div class="col-md-6">
@@ -96,7 +99,9 @@
             @endif
         </div>
     </div>
-
+    <script>
+      new FroalaEditor('textarea');
+    </script>
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
