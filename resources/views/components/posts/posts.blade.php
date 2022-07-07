@@ -1,3 +1,13 @@
+<script type="text/javascript">
+          window.onload = () => {
+                CKEDITOR.replace("summary");
+                CKEDITOR.replace("body");
+          };
+
+          function sendText() {
+                window.parent.postMessage(CKEDITOR.instances.CK1.getData(), "*");
+          }
+    </script>
 @if(strpos(url()->current(), 'create'))
 <form id="form" class="form-horizontal" method="POST" action="{{ route('post.store') }}">
     {{ csrf_field() }}
@@ -20,7 +30,7 @@
         <label for="summary" class="col-md-4 control-label">Resumo</label>
 
         <div class="col-md-6">
-            <textarea class="form-control" name="summary"></textarea>
+            <textarea id="summary" class="form-control" name="summary"></textarea>
 
             @if ($errors->has('summary'))
             <span class="help-block">
@@ -33,7 +43,7 @@
         <label for="body" class="col-md-4 control-label">Matéria</label>
 
         <div class="col-md-6">
-            <textarea class="form-control" name="body"></textarea>
+            <textarea id="body" class="form-control" name="body"></textarea>
 
             @if ($errors->has('body'))
             <span class="help-block">
@@ -42,9 +52,7 @@
             @endif
         </div>
     </div>
-    <script>
-      new FroalaEditor('textarea');
-    </script>
+    
 
 
     <div class="form-group">
@@ -77,7 +85,7 @@
         <label for="summary" class="col-md-4 control-label">Resumo</label>
 
         <div class="col-md-6">
-            <textarea class="form-control" name="summary">{{ $post->summary }}</textarea>
+            <textarea id="summary" class="form-control" name="summary">{{ $post->summary }}</textarea>
 
             @if ($errors->has('summary'))
             <span class="help-block">
@@ -99,9 +107,7 @@
             @endif
         </div>
     </div>
-    <script>
-      new FroalaEditor('textarea');
-    </script>
+    
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">

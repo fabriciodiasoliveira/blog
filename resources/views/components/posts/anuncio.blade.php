@@ -2,7 +2,7 @@
     <div class="card-header"><h1>{{ $anuncio->head }}</h1></div>
 
     <div class="card-body">
-        <h2>{!! nl2br(e($anuncio->summary)) !!}</h2>
+        <h2>{!! $anuncio->summary !!}</h2>
         {!! $anuncio->body !!}
         <div class="text-end card-text"><small><i>{{ $anuncio->name }}</i></small></div>
         @auth
