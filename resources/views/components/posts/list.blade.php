@@ -16,7 +16,7 @@
             <div class="card-header"><a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2></a></div>
 
             <div class="card-body">
-                {{!! $post->summary !!}}
+                {!! $post->summary !!}
                 <div class="text-end"><small><i>{{ $post->name }}</i></small> - <i> Adicionado em {{ date('d/m/Y - H:i:s', strtotime($post->created_at)) }}</i></small></div>
                 @php $x++; @endphp
             </div>

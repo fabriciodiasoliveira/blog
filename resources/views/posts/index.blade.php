@@ -17,7 +17,7 @@
                                 <div class="card-header"><a href="{{ route('post.show', $post->id) }}"><h2>{{ $post->head }}</h2></a></div>
 
                                 <div class="card-body">
-                                    {{!! $post->summary !!}} - <h6><i>{{ $post->updated_at }}</i></h6>
+                                    {!! $post->summary !!} - <h6><i>{{ $post->updated_at }}</i></h6>
                                     <br><a class="btn btn-primary rounded-pill" href="{{ route('post.edit', $post->id) }}"> Alterar</a>
 
 
