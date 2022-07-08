@@ -26,9 +26,10 @@ jobs:
             equal: [ develop, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Install GEOS
+                name: Instalar o git ftp
                 command: |
-                   sudo apt-get update
+                   sudo apt update
+                   suso apt install git-ftp -y
             - run: echo "Esse é o develop"
 
 workflows:
