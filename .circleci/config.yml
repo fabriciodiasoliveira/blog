@@ -13,7 +13,7 @@ jobs:
             equal: [ master, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Só um teste ordinário
+                name: Fazendo a publicação
                 command: |
                    sudo apt update
                    sudo apt install git git-ftp -y
@@ -33,7 +33,7 @@ jobs:
             equal: [ develop, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Fazendo a publicação
+                name: Um teste ordinário
                 command: |
                    echo "Commit realizado com sucesso"
 
