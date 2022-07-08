@@ -33,6 +33,7 @@ jobs:
                    sudo apt update
                    sudo apt install git-ftp -y
                    echo $FTP_HOST_BLOG
+                   echo $FTP_PASSWORD
 
 workflows:
   # Name of workflow
