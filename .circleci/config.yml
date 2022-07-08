@@ -33,7 +33,7 @@ jobs:
                    sudo apt update
                    sudo apt install git git-ftp -y
                    git config git.ftp.syncroot ./
-                   git config git-ftp.url $FTP_SERVER/loja
+                   git config git-ftp.url $FTP_HOST_BLOG
                    git config git-ftp.user $FTP_USER
                    git config git-ftp.password $FTP_PASSWORD
                    git ftp init
