@@ -29,7 +29,7 @@ jobs:
                 name: Instalar o git ftp
                 command: |
                    sudo apt update
-                   suso apt install git-ftp -y
+                   sudo apt install git-ftp -y
             - run: echo "Esse é o develop"
 
 workflows:
