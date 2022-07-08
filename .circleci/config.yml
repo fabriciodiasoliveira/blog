@@ -46,7 +46,7 @@ jobs:
             equal: [ init, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Um teste ordinário
+                name: Inicialização do repositório
                 command: |
                    sudo apt update
                    sudo apt install git git-ftp -y
