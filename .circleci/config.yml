@@ -7,13 +7,23 @@ jobs:
     docker:
      - image: cimg/base:2022.05
     steps:
-      - run: echo "Say hello to YAML!"
+      - checkout
+      - when:
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "Esse é o master"
   # Job two with a unique name
   say_goodbye:
     docker:
      - image: cimg/base:2022.05
     steps:
-      - run: echo "Say goodbye to YAML!"
+      - checkout
+      - when:
+          condition:
+            equal: [ develop, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "Esse é o develop"
 
 workflows:
   # Name of workflow
