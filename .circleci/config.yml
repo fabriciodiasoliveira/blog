@@ -12,7 +12,16 @@ jobs:
           condition:
             equal: [ master, << pipeline.git.branch >> ]
           steps:
-            - run: echo "Esse é o master"
+            - run:
+                name: Fazendo a publicação
+                command: |
+                   sudo apt update
+                   sudo apt install git git-ftp -y
+                   git config git.ftp.syncroot ./
+                   git config git-ftp.url $FTP_HOST_BLOG
+                   git config git-ftp.user $FTP_USER
+                   git config git-ftp.password $FTP_PASSWORD
+                   git ftp push
   # Job two with a unique name
   develop:
     docker:
@@ -23,12 +32,35 @@ jobs:
           condition:
             equal: [ develop, << pipeline.git.branch >> ]
           steps:
-            - run: echo "Esse é o develop"
+            - run:
+                name: Um teste ordinário
+                command: |
+                   echo "Commit realizado com sucesso"
+  init:
+    docker:
+     - image: cimg/base:2022.05
+    steps:
+      - checkout
+      - when:
+          condition:
+            equal: [ init, << pipeline.git.branch >> ]
+          steps:
+            - run:
+                name: Inicialização do repositório
+                command: |
+                   sudo apt update
+                   sudo apt install git git-ftp -y
+                   git config git.ftp.syncroot ./
+                   git config git-ftp.url $FTP_HOST_BLOG
+                   git config git-ftp.user $FTP_USER
+                   git config git-ftp.password $FTP_PASSWORD
+                   git ftp init
 
 workflows:
   # Name of workflow
-  hello_and_goodbye:
+  principal:
     # List of jobs that will run
     jobs:
       - master
       - develop
+      - init
