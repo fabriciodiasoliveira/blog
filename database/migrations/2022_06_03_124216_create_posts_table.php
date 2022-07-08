@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('personal_posts', function (Blueprint $table) {
             $table->id();
             $table->text('head');
-            $table->text('summary');
+            $table->longText('summary');
             $table->longText('body');
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
             $table->timestamps();
