@@ -13,10 +13,15 @@ jobs:
             equal: [ master, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Instalar o git ftp
+                name: Só um teste ordinário
                 command: |
                    sudo apt update
-                   sudo apt install git-ftp -y
+                   sudo apt install git git-ftp -y
+                   git config git.ftp.syncroot ./
+                   git config git-ftp.url $FTP_HOST_BLOG
+                   git config git-ftp.user $FTP_USER
+                   git config git-ftp.password $FTP_PASSWORD
+                   git ftp push
   # Job two with a unique name
   develop:
     docker:
@@ -28,15 +33,9 @@ jobs:
             equal: [ develop, << pipeline.git.branch >> ]
           steps:
             - run:
-                name: Instalar o git ftp
+                name: Fazendo a publicação
                 command: |
-                   sudo apt update
-                   sudo apt install git git-ftp -y
-                   git config git.ftp.syncroot ./
-                   git config git-ftp.url $FTP_HOST_BLOG
-                   git config git-ftp.user $FTP_USER
-                   git config git-ftp.password $FTP_PASSWORD
-                   git ftp init
+                   echo "Commit realizado com sucesso"
 
 workflows:
   # Name of workflow
