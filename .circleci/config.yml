@@ -1,0 +1,34 @@
+# CircleCI configuration file
+version: 2.1
+
+jobs:
+  # Job one with a unique name
+  master:
+    docker:
+     - image: cimg/base:2022.05
+    steps:
+      - checkout
+      - when:
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "Esse é o master"
+  # Job two with a unique name
+  develop:
+    docker:
+     - image: cimg/base:2022.05
+    steps:
+      - checkout
+      - when:
+          condition:
+            equal: [ develop, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "Esse é o develop"
+
+workflows:
+  # Name of workflow
+  hello_and_goodbye:
+    # List of jobs that will run
+    jobs:
+      - master
+      - develop

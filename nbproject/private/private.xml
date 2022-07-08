@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/var/www/html/blog/resources/views/components/posts/anuncio.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/posts/index.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/helpers/headers.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/posts.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/list.blade.php</file>
+            <file>file:/var/www/html/blog/app/Models/Post.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/show.blade.php</file>
+        </group>
     </open-files>
 </project-private>

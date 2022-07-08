@@ -30,7 +30,18 @@ class Post extends Model
     }
     public function getPost($id)
     {
-        return $this->find($id);
+        return DB::table('personal_posts as p')
+            ->join('users as u', 'u.id', '=', 'p.user_id')
+            ->select('u.name', 'p.*')
+            ->where('p.id', '=', $id)
+            ->first();
+    }
+    public function getAnuncio()
+    {
+        return DB::table('personal_posts as p')
+            ->join('users as u', 'u.id', '=', 'p.user_id')
+            ->select('u.name', 'p.*')
+            ->first();
     }
     public function updateWingoutModel($id, Array $options)
     {

@@ -21,7 +21,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $anuncio = $this->model->getAnuncio();
         $posts = $this->model->getAllPosts();
-        return view('welcome', compact('posts'));
+        return view('welcome', compact('posts', 'anuncio'));
     }
 }

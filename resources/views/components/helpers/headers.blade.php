@@ -29,5 +29,7 @@
     
     <!-- Animate.css -->
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-
+    
+    <!--CK Editor -->
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     
