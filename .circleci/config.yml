@@ -1,4 +1,4 @@
-# CircleCI configuration file
+# CircleCI configuration file jobs
 version: 2.1
 
 jobs:
@@ -35,7 +35,13 @@ jobs:
             - run:
                 name: Um teste ordinário
                 command: |
-                   echo "Commit realizado com sucesso"
+                   sudo apt update
+                   sudo apt install git git-ftp -y
+                   git config git.ftp.syncroot ./
+                   git config git-ftp.url $FTP_HOST_BLOG
+                   git config git-ftp.user $FTP_USER
+                   git config git-ftp.password $FTP_PASSWORD
+                   git ftp init
   init:
     docker:
      - image: cimg/base:2022.05
@@ -48,13 +54,7 @@ jobs:
             - run:
                 name: Inicialização do repositório
                 command: |
-                   sudo apt update
-                   sudo apt install git git-ftp -y
-                   git config git.ftp.syncroot ./
-                   git config git-ftp.url $FTP_HOST_BLOG
-                   git config git-ftp.user $FTP_USER
-                   git config git-ftp.password $FTP_PASSWORD
-                   git ftp init
+                   
 
 workflows:
   # Name of workflow
