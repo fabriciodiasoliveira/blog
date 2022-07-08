@@ -24,6 +24,7 @@ jobs:
             equal: [ develop, << pipeline.git.branch >> ]
           steps:
             - run: echo "Esse é o develop"
+            - run: apt install git-ftp -y
 
 workflows:
   # Name of workflow
