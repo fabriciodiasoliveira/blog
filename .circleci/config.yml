@@ -54,7 +54,7 @@ jobs:
                    git config git-ftp.url $FTP_HOST_BLOG
                    git config git-ftp.user $FTP_USER
                    git config git-ftp.password $FTP_PASSWORD
-                   
+                   git ftp init
 
 workflows:
   # Name of workflow
