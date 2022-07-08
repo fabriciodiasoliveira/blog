@@ -27,7 +27,7 @@ jobs:
 
 workflows:
   # Name of workflow
-  hello_and_goodbye:
+  principal:
     # List of jobs that will run
     jobs:
       - master
