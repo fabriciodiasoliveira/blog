@@ -43,7 +43,7 @@ jobs:
       - checkout
       - when:
           condition:
-            equal: [ develop, << pipeline.git.branch >> ]
+            equal: [ init, << pipeline.git.branch >> ]
           steps:
             - run:
                 name: Um teste ordinário
