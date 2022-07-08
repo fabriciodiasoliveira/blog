@@ -1,8 +1,6 @@
 # CircleCI configuration file
 version: 2.1
 
-orbs:
-  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   # Job one with a unique name
   master:
@@ -14,7 +12,11 @@ jobs:
           condition:
             equal: [ master, << pipeline.git.branch >> ]
           steps:
-            - run: echo "Esse é o master"
+            - run:
+                name: Instalar o git ftp
+                command: |
+                   sudo apt update
+                   sudo apt install git-ftp -y
   # Job two with a unique name
   develop:
     docker:
@@ -30,7 +32,6 @@ jobs:
                 command: |
                    sudo apt update
                    sudo apt install git-ftp -y
-            - run: echo "Esse é o develop"
 
 workflows:
   # Name of workflow
