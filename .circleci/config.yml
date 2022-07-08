@@ -63,3 +63,4 @@ workflows:
     jobs:
       - master
       - develop
+      - init
