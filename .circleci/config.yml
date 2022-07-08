@@ -1,4 +1,4 @@
-# CircleCI configuration file
+# CircleCI configuration file jobs
 version: 2.1
 
 jobs:
