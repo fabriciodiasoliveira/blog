@@ -1,3 +1,4 @@
+@if($anuncio != null)
 <div class="card">
     <div class="card-header"><h1>{{ $anuncio->head }}</h1></div>
 
@@ -10,3 +11,4 @@
         @endauth
     </div>
 </div>
+@endif
