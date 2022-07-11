@@ -49,6 +49,8 @@ class PostController extends Controller {
 
     public function update(Request $request, $id) {
         $data = $request->all();
+        $data['body'] = str_replace('"', "'", $data['body']);
+        $data['summary'] = str_replace('"', "'", $data['summary']);
         $this->model->updateWingoutModel($id, $data);
          return redirect()->route('post.index')->with('success', 'Postagem alterada');
     }
