@@ -33,11 +33,13 @@ class PostController extends Controller {
 
     public function show($id) {
         $post = $this->model->getPost($id);
-        return view('posts.show', compact('post'));
+        $anuncio = $this->model->getAnuncio();
+        return view('posts.show', compact('post', 'anuncio'));
     }
     public function showUser($id) {
         $post = $this->model->getPost($id);
-        return view('posts.post', compact('post'));
+        $anuncio = $this->model->getAnuncio();
+        return view('posts.post', compact('post', 'anuncio'));
     }
 
     public function edit($id) {
