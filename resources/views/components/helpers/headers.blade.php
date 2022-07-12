@@ -25,7 +25,7 @@
     <!-- Personalizações -->
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <script src="{{ asset('js/global.js') }}" ></script>
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+<!--    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">-->
     
     <!-- Animate.css -->
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">

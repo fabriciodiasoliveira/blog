@@ -5,7 +5,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('images/logo.png') }}"/> {{ config('app.name', 'Laravel') }}
@@ -69,7 +69,14 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="row">
+                <div class="col-md-1">
+                    @component('links')@endcomponent
+                </div>
+                <div class="col-md-11">
+                    @yield('content')
+                </div>
+            </div>
         </main>
         <script src="{{ asset('js/global.end.js') }}" ></script>
     </div>
