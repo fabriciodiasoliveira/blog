@@ -25,7 +25,7 @@
 @if($x == 3)
 </div>
 <div class="row">
-@php $x = 0; $y = rand(0,3); @endphp
+@php $x = 0; $y = rand(0,count($col)-1); @endphp
 @endif
 @endforeach
 </div>
