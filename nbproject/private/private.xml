@@ -5,8 +5,9 @@
         <group>
             <file>file:/var/www/html/blog/app/Http/Controllers/HomeController.php</file>
             <file>file:/var/www/html/blog/resources/views/posts/show.blade.php</file>
-            <file>file:/var/www/html/blog/resources/views/components/helpers/headers.blade.php</file>
+            <file>file:/var/www/html/blog/.circleci/config.yml</file>
             <file>file:/var/www/html/blog/resources/views/welcome.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/helpers/headers.blade.php</file>
             <file>file:/var/www/html/blog/resources/views/layouts/app.blade.php</file>
             <file>file:/var/www/html/blog/routes/web.php</file>
             <file>file:/var/www/html/blog/app/Http/Controllers/PostController.php</file>
