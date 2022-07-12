@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="http://rpg.fabricioweb.net">Mundo sombrio - site de RPG</a>
+        <a href="http://rpg.fabricioweb.net">Mundo sombrio RPG</a>
     </div>
 </div>
 <div class="row">
