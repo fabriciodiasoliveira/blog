@@ -40,7 +40,6 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif--}}
-                                
                         @else
                         @if(Auth::user()->tipo == 'admin')
                             <li class="nav-item">
