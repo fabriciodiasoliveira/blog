@@ -16,15 +16,9 @@ $y = rand(0,3);
     @foreach ($posts as $post)
     <div class="col-md-{{$col[$y][$x]}}">
         <div class="row">
-            <div class="col-md-12" style="
-                 background-color: #dddddd;
-                 border-radius: 25px;">
-                <a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-12">
-                {!! $post->summary !!}</a>
+                <a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2>
+                        {!! $post->summary !!}</a>
             </div>
         </div>
         <div class="row">

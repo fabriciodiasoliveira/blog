@@ -19,6 +19,10 @@ class PostController extends Controller {
         $posts = $this->model->getAllPosts();
         return view('posts.index', compact('posts'));
     }
+    public function carrousel() {
+        $posts = $this->model->get3Last();
+        return view('components.posts.carrousel', compact('posts'));
+    }
 
     public function create() {
         return view('posts.create');

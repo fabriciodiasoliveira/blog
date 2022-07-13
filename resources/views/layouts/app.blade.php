@@ -4,6 +4,11 @@
     @component('components.helpers.headers')@endcomponent
 </head>
 <body>
+    <div class="row">
+        <div class="col-md-12">
+             <iframe width="100%" src="{{ url('/') }}/carrousel" title=""></iframe>
+        </div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
@@ -67,7 +72,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             <div class="row">
                 <div class="col-md-1">
