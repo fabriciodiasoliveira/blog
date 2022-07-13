@@ -73,10 +73,10 @@
         </nav>
         <main class="py-4">
             <div class="row">
-                <div class="col-md-1">
+                <div class="col-md-2">
                     @component('links')@endcomponent
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-12">
                     @yield('content')
                 </div>
             </div>

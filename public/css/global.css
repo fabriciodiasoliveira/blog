@@ -17,3 +17,8 @@ a:active {
 a{
     color: black;
 }
+.title_header{
+    background: #555555;
+    color: white;
+    borde-radius: 25px;
+}
