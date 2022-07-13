@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/blog/app/Http/Controllers/HomeController.php</file>
             <file>file:/var/www/html/blog/resources/views/posts/show.blade.php</file>
-            <file>file:/var/www/html/blog/.circleci/config.yml</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/anuncio.blade.php</file>
             <file>file:/var/www/html/blog/resources/views/welcome.blade.php</file>
-            <file>file:/var/www/html/blog/resources/views/components/helpers/headers.blade.php</file>
-            <file>file:/var/www/html/blog/resources/views/layouts/app.blade.php</file>
-            <file>file:/var/www/html/blog/routes/web.php</file>
-            <file>file:/var/www/html/blog/app/Http/Controllers/PostController.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/list.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/components/posts/show.blade.php</file>
+            <file>file:/var/www/html/blog/resources/views/links.blade.php</file>
         </group>
     </open-files>
 </project-private>
