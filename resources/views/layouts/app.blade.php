@@ -35,11 +35,11 @@
                                 </li>
                             @endif
 
-                            {{--@if (Route::has('register'))
+                            @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif--}}
+                            @endif
                         @else
                         @if(Auth::user()->tipo == 'admin')
                             <li class="nav-item">
@@ -72,14 +72,16 @@
             </div>
         </nav>
         <main class="py-4">
-            <div class="row">
-                <div class="col-md-2">
-                    @component('links')@endcomponent
-                </div>
-                <div class="col-md-12">
-                    @yield('content')
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <td width="20%" valign="top">
+                        @component('links')@endcomponent
+                    </td>
+                    <td>
+                        @yield('content')
+                    </td>
+                </tr>
+            </table>
         </main>
         <script src="{{ asset('js/global.end.js') }}" ></script>
     </div>
