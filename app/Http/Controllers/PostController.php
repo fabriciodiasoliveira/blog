@@ -17,7 +17,8 @@ class PostController extends Controller {
 
     public function index() {
         $posts = $this->model->getAllPosts();
-        return view('posts.index', compact('posts'));
+        $anuncio = $this->model->getAnuncio();
+        return view('posts.index', compact('posts', 'anuncio'));
     }
     public function carrousel() {
         $posts = $this->model->get3Last();
