@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    @if( !isset($post))
     @component('components.helpers.headers')@endcomponent
+    @else
+    @component('components.helpers.headers', compact('post'))@endcomponent
+    @endif
 </head>
 <body>
     <div class="row">

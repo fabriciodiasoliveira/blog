@@ -5,9 +5,11 @@
     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    @if( !isset($post))
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    @else
+    <title>{{ config('app.name', 'Laravel') }} - {{ $post->head }}</title>
+    @endif
     <!-- JQuery -->
     <script src="{{ asset('js/jquery-3.6.0.js') }}" ></script>
     <script src="{{ asset('js/jquery.mask.js') }}" ></script>
