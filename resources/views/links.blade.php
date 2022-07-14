@@ -34,11 +34,6 @@
         <a href="https://www.php.net">Documentação PHP</a>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <a href="https://docs.docker.com/">Documentação Docker</a>
-    </div>
-</div>
 <br>
 <div class="row">
     <div class="col-md-12">
