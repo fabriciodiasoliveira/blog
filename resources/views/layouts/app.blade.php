@@ -72,16 +72,14 @@
             </div>
         </nav>
         <main class="py-4">
-            <table>
-                <tr>
-                    <td width="20%" valign="top">
-                        @component('links')@endcomponent
-                    </td>
-                    <td>
-                        @yield('content')
-                    </td>
-                </tr>
-            </table>
+            <div class="row">
+                <div class="col-md-2">
+                    @component('links')@endcomponent
+                </div>
+                <div class="col-md-10">
+                    @yield('content')
+                </div>
+            </div>
         </main>
         <script src="{{ asset('js/global.end.js') }}" ></script>
     </div>
