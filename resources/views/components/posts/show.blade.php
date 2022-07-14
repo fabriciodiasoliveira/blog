@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    document.title = document.title + ' - {{ $post->head }}'
+</script>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
