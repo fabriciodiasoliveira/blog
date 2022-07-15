@@ -17,7 +17,14 @@ $y = rand(0,3);
     <div class="col-md-{{$col[$y][$x]}}">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2>
+                <a href="{{ route('post.show.visit', $post->id) }}">
+                    <div style="
+                         background: gray;
+                         border-radius: 10px;
+                         color: white;
+                         ">
+                        <h2>{{ $post->head }}</h2>
+                    </div>
                     {!! $post->summary !!}</a>
             </div>
         </div>
