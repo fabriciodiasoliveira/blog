@@ -1,4 +1,4 @@
-## Para rodar o programa
+<h1> Para rodar o programa</h1>
 <ul>
     <li>Instale o PHP 8 e o Composer</li>
     <li>Abra o aplicativo de linha de comando do seu sistema operacional</li>
@@ -6,7 +6,7 @@
     <li>Configure o .env para seu banco de dados Mysql, SQLite ou Postgress</li>
     <li>Execute as linhas abaixo:</li>
 </ul>
-## Comandos
+<h1>Comandos</h1>
 <ul>
     <li>php artisan migrate</li>
     <li>php artisan db:seed --class=UserSeeder^</li>
