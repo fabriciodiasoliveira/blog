@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'name' => 'Fabrício Dias de Oliveira',
             'email' => 'devanon.kyosha@gmail.com',
             'password' => bcrypt('Devanon1'),
-            'tipo' => bcrypt('admin'),
+            'tipo' => 'admin',
         ]);        
     }
 }
