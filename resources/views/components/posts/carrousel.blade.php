@@ -16,7 +16,7 @@
 
             @foreach ($posts as $post)
                 <div class="carousel-item">
-                    <a href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2>
+                    <a target="_blank" href="{{ route('post.show.visit', $post->id) }}"><h2>{{ $post->head }}</h2>
                         {!! $post->summary !!}</a>
                 </div>
             @endforeach
