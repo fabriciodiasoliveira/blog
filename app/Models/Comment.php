@@ -8,7 +8,7 @@ class Comment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'comment', 'name',
+        'comment', 'name', 'post_id'
     ];
 
     protected $hidden = [
