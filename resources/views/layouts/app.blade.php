@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <div class="row">
         <div class="col-md-12">
-             {{-- <iframe width="100%" src="{{ url('/') }}/carrousel" title=""></iframe> --}}
+             <iframe width="100%" src="{{ url('/') }}/carrousel" title=""></iframe>
         </div>
     </div>
     <div id="app">
@@ -84,7 +84,7 @@
         <main class="py-4">
             <div class="row">
                 <div class="col-md-12">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445885109165079"
+                    {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445885109165079"
                      crossorigin="anonymous"></script>
                     <!-- Bloquinhos -->
                     <ins class="adsbygoogle"
@@ -95,7 +95,7 @@
                          data-full-width-responsive="true"></ins>
                     <script>
                          (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> --}}
                 </div>
             </div>
             <div class="row">
