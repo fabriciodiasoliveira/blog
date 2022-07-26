@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePermissionsTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_permissions', function (Blueprint $table) {
+        Schema::create('personal_comments', function (Blueprint $table) {
             $table->id();
-            $table->string('permission')->default('noadmin');
-            $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
+            $table->text('comment');
+            $table->bigInteger('user_id');
+            $table->foreignId('post_id')->constrained('personal_posts')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreatePermissionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('comments');
     }
 }

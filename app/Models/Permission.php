@@ -25,7 +25,7 @@ class Permission extends Model
     }
     public function getPermission($id)
     {
-        return $this->find($id);
+        return Permission::query()->select('*')->where('user_id','=', $id)->first();
     }
     public function setAdmin($id){
         Permission::query()->where('id', '=', $id)->update(['permission' => 'admin']);

@@ -25,6 +25,14 @@ class Post extends Model
             ->orderBy('p.id', 'desc')
             ->paginate(20);
     }
+    public function get3Last(){
+        return DB::table('personal_posts as p')
+            ->join('users as u', 'u.id', '=', 'p.user_id')
+            ->select('u.name', 'p.*')
+            ->orderBy('p.id', 'desc')
+            ->limit(5)
+            ->get();
+    }
     public function remove($id){
         Post::destroy($id);
     }
