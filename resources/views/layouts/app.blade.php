@@ -79,7 +79,7 @@
         <main class="py-4">
             <div class="row">
                 <div class="col-md-12">
-                   {!! Adsense::show('responsive') !!}
+                   {{-- {!! Adsense::show('responsive') !!} --}}
                 </div>
             </div>
             <div class="row">
